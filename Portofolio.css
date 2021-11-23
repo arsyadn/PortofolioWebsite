@@ -1,0 +1,288 @@
+/* color palette
+415a77, e8dab2, 4f6d7a, c0d6df, eaeaea */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+header{
+    height: 70px;
+    /* border: 1px solid; */
+}
+
+header h1{
+    /* border: 1px solid; */
+    /* diberi border agar mudah karena terlihat*/
+    display: inline-block; 
+    /*inline-block sesuai font */
+    /* float: left; */
+    padding: 15px 24px;
+    text-transform: uppercase;
+}
+
+header h1 a{
+    transition: 0.3s;
+    /* transition untuk hover */
+}
+
+header h1 a:hover{
+    color: #FFCE45;
+}
+
+header ul{
+    /* border: 1px solid; */
+    float: right;
+}
+
+header ul li{
+    /* border: 1px solid; */
+    padding: 24px;
+    display: inline-block;
+}
+
+header ul li a{
+    transition: 0.3s;
+}
+
+header ul li a:hover{
+    color: #FFCE45;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    /* border: 1px solid; */
+}
+.container::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.mobile{
+    float: right;
+    display: none;
+    padding: 18px;
+    /* border: 1px solid; */
+}
+.mobile:hover{
+    cursor: pointer;
+    /* mengubah menjadi pointer */
+}
+#check{
+    display: none;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    /* bisa juga dengan left -300px untuk saat mode mobile atau display: none */
+    width: 300px;
+    background-color: rgba(65, 90, 119, 0.9);
+    /* display: none; */
+    transition: 0.3s;
+    z-index: 9999;
+    
+}
+
+.sidebar ul li a{
+    color: #ffffff;
+}
+.sidebar ul li{
+    padding: 24px;
+    transition: 0.3s;
+    transition-property: background-color;
+}
+.sidebar ul li:hover{
+    background-color: #FFF1AF;
+   
+}
+.sidebar ul li a:hover{
+    color: #62943c;
+    transition: 0.3s;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+    /* atau bisa juga dengan left = 0 jika diatasnya left = -300 atau bisa juga dengan display:block namun tidak dapat dibuat transisi dari kiri ke kanan */
+    /* display: block; */
+}
+
+/* Section */
+section{
+    padding: 50px 0px;
+}
+.banner{
+    background-color: #5d8596; 
+    /*  */
+    padding: 100px 0px;
+}
+
+.banner img{
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px #1b263b;
+    margin-bottom: 10px;
+}
+
+.banner h2, .banner p, .banner span{
+    color: #ffffff;
+}
+
+.banner p{
+    font-size: 20px;
+}
+
+.bannerleft {
+    /* border: 1px solid; */
+    padding-left: 24px;
+}
+
+/* About */
+section h3{
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+
+section h3::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 120px;
+    height: 1px;
+    background-color: #517e66;
+    left: calc(50% - 60px); 
+    /* setengah dari 120px yaitu 60 */
+}
+
+section h3::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    width: 40px;
+    height: 5px;
+    background-color: #e8dab2;
+    left: calc(50% - 20px); 
+}
+
+#about p{
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+/* Skills */
+#skills, #contact{
+    background-color: #c0d6df;
+}
+
+
+#skills .bar{
+    height: 30px;
+    border: 1px solid #c0d6df;
+    background-color: #ffffff;
+    margin: 5px 0px 20px 0px;
+}
+
+#skills .bar .skilllevel{
+    height: 31px;
+    color: #ffffff;
+    background-color: #34656D;
+    display: inline-block;
+    text-align: center;
+}
+
+.html{
+    width: 90%;
+}
+.css{
+    width: 80%;
+}
+.js{
+    width: 85%;
+}
+.figma{
+    width: 87%;
+}
+.java{
+    width: 65%;
+}
+.sql{
+    width: 67%;
+}
+
+/* Portofolio */
+.columns{
+    width: 25%;
+    box-sizing: border-box;
+    padding: 5px;
+    float: left;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.columns img{
+    width: 100%;
+}
+
+.columns a:hover img{
+    transform: scale(1.2)
+}
+
+/* Contact Person */
+.addemail{
+    width: 33.33%;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    padding: 30px 10px;
+}
+.addemail h4{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #517e66;
+    margin-bottom: 10px;
+}
+
+footer{
+    background-color: #eaeaea;
+    padding: 20px;
+    text-align: center;
+}
+footer small{
+    color: #ffffff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Mode Mobile */
+@media (max-width: 768px) {
+    .mobile{
+        display: block;
+    }
+    header ul{
+        display: none;
+    }
+    .columns{
+        width: 50%;
+    }
+    .addemail{
+        width: 100%;
+    }
+}
